@@ -1,0 +1,10 @@
+# Build products and local credentials
+/dist/
+*.zip
+.env
+.env.*
+*.pem
+*.key
+**/node_modules/
+**/__pycache__/
+.DS_Store

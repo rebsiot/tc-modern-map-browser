@@ -1,0 +1,47 @@
+name: Publish Foundry module
+
+on:
+  push:
+    branches: [main]
+    paths: [module.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Install Node for checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check syntax and run module tests
+        run: |
+          for file in scripts/*.mjs; do node --check "$file"; done
+          node --test tests/*.test.mjs
+      - name: Prepare Foundry release artifacts
+        run: python3 release-tools/build_release.py
+      - name: Refuse duplicate release version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v$(node -p "require('./module.json').version")"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists. Increment module.json version before publishing."
+            exit 1
+          fi
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v$(node -p "require('./module.json').version")"
+          gh release create "$TAG" dist/tc-modern-map-browser.zip dist/module.json \
+            --target "$GITHUB_SHA" --title "TC Modern Scene Library $TAG" --notes-file RELEASE-NOTES.md
