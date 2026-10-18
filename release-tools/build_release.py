@@ -25,7 +25,7 @@ files=[root/'module.json']
 # Public release: only explicitly reviewed docs; never auto-package newly added private notes.
 allowed_docs = (
     'README.md', 'LICENSE.md', 'THIRD-PARTY-CONTENT.md', 'CHANGELOG.md', 'RELEASE-NOTES.md',
-    'CATALOG-REVIEW-GUIDE.md', 'UPGRADE-0.2.8.md', 'UPGRADE-0.2.9.md', 'TEST-REPORT.md'
+    'CATALOG-REVIEW-GUIDE.md', 'UPGRADE-0.2.8.md', 'UPGRADE-0.2.9.md', 'UPGRADE-0.2.11.md', 'TEST-REPORT.md'
 )
 files += [root/name for name in allowed_docs if (root/name).is_file()]
 files += sorted(p for p in (root/'scripts').rglob('*.mjs') if p.is_file())

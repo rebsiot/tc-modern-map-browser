@@ -1,19 +1,21 @@
-# TC Modern Scene Library v0.2.10 — Clearer name
+# TC Modern Scene Library v0.2.11 — easier to find in Manage Modules
 
-The Foundry Module Management entry now reads **TC Modern — Scene Library**, so it is easy to distinguish from **TC Modern — Asset Browser**. The technical module ID, existing catalog, imported Scenes, Journals, permissions, World settings and Region/teleporter behavior are unchanged. This update does not import or delete any world content.
+The Foundry module is now named exactly **TC Modern Scene Library** in Manage Modules (the earlier v0.2.10 release used **TC Modern — Scene Library**). The internal ID remains `tc-modern-map-browser`, so existing world settings and installations still refer to the same module.
 
-**What changed**
-- Simplified the module display name. This is a presentation-only release based on v0.2.9.
-- Clarified that the TC Modern Windows downloader and asset indexer are **not** Foundry modules and therefore have no enable/disable checkbox.
+### What's changed
 
-**Before updating**
-- Back up your world and `Data/modules/tc-modern-map-browser`. Keep creator modules and their paid content separate; do not reinstall those 93 modules to update this add-on.
-- In Foundry Setup, update using the existing manifest below or manually install the entire versioned ZIP into `Data/modules/tc-modern-map-browser` (with `module.json` directly inside). Restart, enable/check it in the desired world and hard-refresh.
+- Changed the Foundry display title from **TC Modern — Scene Library** to the approved **TC Modern Scene Library**.
+- Reorganized the README around searching locations, choosing variants and importing only selected Scenes and associated GM Journals.
+- **No import logic, catalog mapping, creator compendiums, Scenes, Journals, Regions or stored world data were changed.**
 
-**Manifest:** https://github.com/rebsiot/tc-modern-map-browser/releases/latest/download/module.json
+### Before updating
 
-**Rollback:** Restore the backed-up module folder. The rename has no migration, but deliberately imported or edited world Scenes remain until rolled back separately from a matching world backup.
+Back up your world and module folder. For an older manually installed build, see [upgrade and rollback](https://github.com/rebsiot/tc-modern-map-browser/blob/main/UPGRADE-0.2.11.md); keep the creator compendiums installed.
 
-**Testing:** GitHub Actions runs Node syntax checks and automated/mocked tests when this release is published. Successful automation is not a live Foundry v14 test; the GM should verify the name and one existing catalog workflow after updating. No live test is claimed here.
+### Known limitations
 
-**Distribution and limitations:** This remains unofficial, AI-assisted, experimental, proprietary personal-use software supplied as-is, with no warranty or support guarantee. Creator TC Modern maps, artwork and compendiums must be obtained separately and lawfully and are NOT included; no creator artwork, credentials, browser sessions or world data are distributed. See LICENSE.md and THIRD-PARTY-CONTENT.md in the repository. It is not endorsed by TC Modern/Tom Cartos or Foundry Gaming LLC.
+Automated Node/mock tests pass. **Live Foundry v14 upgrade, GM/Player Journal permissions, category persistence and teleport destination workflows still need verification.** This experimental AI-assisted project is provided as-is, with no support obligation. It is proprietary personal-use software; users supply their own authorized creator packs and assets. See [license](https://github.com/rebsiot/tc-modern-map-browser/blob/main/LICENSE.md) and [creator requirements](https://github.com/rebsiot/tc-modern-map-browser/blob/main/THIRD-PARTY-CONTENT.md).
+
+### Install
+
+[Stable Foundry manifest](https://github.com/rebsiot/tc-modern-map-browser/releases/latest/download/module.json) · [v0.2.11 manifest](https://github.com/rebsiot/tc-modern-map-browser/releases/download/v0.2.11/module.json)
