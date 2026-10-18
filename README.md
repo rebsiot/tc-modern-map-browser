@@ -1,4 +1,4 @@
-# TC Modern - Scene Library & Organizer v0.2.9
+# TC Modern - Scene Library v0.2.10
 
 **Release date:** 2026-10-15  
 **Module ID:** `tc-modern-map-browser` (unchanged from v0.2.2)  
@@ -19,6 +19,15 @@
 This project was **substantially developed with assistance from artificial intelligence**, including AI-generated code, documentation and tests. The maintainer directed the project and its intended behavior, but the software **has not undergone comprehensive independent code review or live Foundry v14 verification**. Automated syntax and mock tests do not prove that the module will work reliably in every world, on every Foundry version, or alongside every other module.
 
 **Provided strictly as-is, with no warranty, guaranteed functionality, security assurance, maintenance commitment or support obligation.** Back up your world and existing module installation before testing or updating it. You use it at your own risk. See [LICENSE.md](LICENSE.md) and [TEST-REPORT.md](TEST-REPORT.md).
+
+## v0.2.10 - Clearer Foundry module name (2026-10-18)
+
+**Foundry Manage Modules now lists this add-on as TC Modern — Scene Library.** Its technical ID stays `tc-modern-map-browser`; all Scene, Journal, Region and world catalog behavior remains unchanged. This is a display-name update, not an asset indexer, a new Scene catalog or a re-import.
+
+- **TC Modern — Scene Library** (T02) and **TC Modern — Asset Browser** (T03) are the only two custom TC Modern Foundry add-ons intended to have world enable/disable checkboxes.
+- **Scene Downloader/Installer** (T01) and **Asset Acquisition/Indexer** (T04) are Windows utilities and do not appear in Foundry Module Management.
+- Back up your world and existing `Data/modules/tc-modern-map-browser` before upgrading. In Foundry Setup update by the verified manifest, or install the full new release ZIP into the same module-ID directory. Restart/hard-refresh and confirm the module remains enabled in your world. Undo by restoring the old module directory and, if any world content was changed during testing, the appropriate world backup.
+- No licensed creator artwork or user-world data is distributed. Live Foundry v14 verification of this particular update is pending.
 
 ## What this module does
 
