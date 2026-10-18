@@ -1,5 +1,13 @@
 # Release history — TC Modern Scene Library
 
+## v0.2.10 — 2026-10-18 — Consistent module name
+
+- Renamed the Foundry Module Management title from **TC Modern — Scene Library & Organizer** to **TC Modern — Scene Library** for clearer identification beside the Asset Browser.
+- No JavaScript, Scene, Journal, Region, compendium, catalog mapping, role permission or data contract change. The ID stays `tc-modern-map-browser`.
+- Install using the GitHub release manifest, or replace only the backed-up module folder. Installed world Scenes, IDs and customization are not touched by this version change.
+- New build must pass repository Actions syntax/mocks; real Foundry v14 naming and catalog smoke tests remain for the GM.
+
+
 ## v0.2.9 — 2026-10-15 — GitHub distribution and publication notices
 
 - Added GitHub Releases manifest and automated source-only release workflow. Versioned ZIP puts `module.json` directly at archive root for Foundry manifest installation.
